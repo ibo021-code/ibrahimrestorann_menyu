@@ -1,0 +1,251 @@
+/* CSS Dəyişənləri */
+:root {
+    --primary-red: #c0392b;
+    --primary-dark: #2c3e50;
+    --hover-red: #e74c3c;
+    --background-dark: #1a1a1a;
+    --text-white: #ffffff;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+/* Baza stillər */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--background-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to right, var(--primary-red), var(--primary-dark));
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.header__logo img {
+    width: 100px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.header__welcome {
+    font-size: 1rem;
+}
+
+/* Naviqasiya */
+.category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--primary-dark);
+    padding: 0.75rem;
+}
+
+.category-nav__button {
+    background: var(--primary-red);
+    color: var(--text-white);
+    border: none;
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.category-nav__button:hover {
+    background: var(--hover-red);
+}
+
+.category-nav__button.active {
+    background: var(--hover-red);
+    transform: scale(0.95);
+}
+
+.category-nav__button:active {
+    transform: scale(0.9);
+}
+
+/* Menyu */
+.menu {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__category {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+}
+
+.menu__category.active {
+    display: block;
+}
+
+.menu__category-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.menu__item {
+    background: var(--primary-dark);
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+}
+
+.menu__item:hover {
+    transform: translateY(-2px);
+}
+
+.menu__item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.menu__item span {
+    font-size: 1rem;
+    color: var(--text-white);
+    text-align: center;
+}
+
+/* QR Kod Bölməsi */
+.qr-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.qr-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.qr-code {
+    background: var(--text-white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-red);
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer__text {
+    font-size: 0.85rem;
+}
+
+/* Mobil cihazlar üçün responsivlik */
+@media (min-width: 768px) {
+    .header__logo img {
+        width: 120px;
+    }
+
+    .header__welcome {
+        font-size: 1.2rem;
+    }
+
+    .category-nav__button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .menu__category-title {
+        font-size: 1.5rem;
+    }
+
+    .menu__item h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu__item span {
+        font-size: 1.1rem;
+    }
+
+    .qr-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .header__logo img {
+        width: 60px;
+    }
+
+    .header__welcome {
+        font-size: 0.9rem;
+    }
+
+    .category-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-nav__button {
+        width: 90%;
+        margin: 0.25rem 0;
+    }
+
+    .menu {
+        padding: 1rem;
+    }
+
+    .menu__item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .qr-section {
+        margin-top: 1.5rem;
+    }
+
+    .qr-title {
+        font-size: 1.1rem;
+    }
+
+    .qr-code {
+        padding: 0.75rem;
+    }
+}
